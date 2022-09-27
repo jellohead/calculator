@@ -1,11 +1,11 @@
 // calculator.js
 const add = (a, b) => a + b;
 
-const subtract = function () { };
+const subtract = (a, b) => a - b;
 
-const multiply = function () { };
+const multiply = (a, b) => a * b;
 
-const divide = function () { };
+const divide = (a, b) => a / b;
 
 
 
