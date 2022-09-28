@@ -1,4 +1,7 @@
 // calculator.js
+let numberStack = [],
+    operatorStack = [];
+
 const add = (a, b) => +a + +b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
@@ -15,7 +18,7 @@ const divide = function (a, b) {
 const executeOp = () => { };
 const clear = () => { };
 
-const operate = function (a, b, operator) {
+const operate = (a, b, operator) => {
     switch (operator) {
         case "+":
             return add(a, b);
@@ -31,6 +34,20 @@ const operate = function (a, b, operator) {
             return clear();
     }
 }
+
+const push = (item) => numberStack.push(item);
+const pop = () => numberStack.pop();
+
+
+//this needs to be wrapped in some sort of init loop
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        //take action for button clicked
+    })
+})
+
+
 
 // let a = prompt("enter a number");
 // console.log("a = " + a);
