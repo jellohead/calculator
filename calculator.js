@@ -3,7 +3,9 @@ const add = (a, b) => +a + +b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = function (a, b) {
+    console.log("divide function a = " + a + ", b = " + b);
     if (b === 0) {
+        console.log("b = " + b);
         return "Don't divide by zero";
     } else {
         return a / b;
@@ -29,7 +31,7 @@ let b = prompt("enter another number");
 console.log("b = " + b);
 let operator = prompt("enter +, -, * or /");
 console.log("operator = " + operator);
-console.log(operate(a, b, operator));
+console.log("The answer is " + operate(a, b, operator));
 
 
 // // Do not edit below this line
