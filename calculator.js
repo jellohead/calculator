@@ -12,6 +12,9 @@ const divide = function (a, b) {
     };
 };
 
+const executeOp = () => { };
+const clear = () => { };
+
 const operate = function (a, b, operator) {
     switch (operator) {
         case "+":
@@ -22,16 +25,20 @@ const operate = function (a, b, operator) {
             return multiply(a, b);
         case "/":
             return divide(a, b);
+        case "=":
+            return executeOp();
+        case "clear":
+            return clear();
     }
 }
 
-let a = prompt("enter a number");
-console.log("a = " + a);
-let b = prompt("enter another number");
-console.log("b = " + b);
-let operator = prompt("enter +, -, * or /");
-console.log("operator = " + operator);
-console.log("The answer is " + operate(a, b, operator));
+// let a = prompt("enter a number");
+// console.log("a = " + a);
+// let b = prompt("enter another number");
+// console.log("b = " + b);
+// let operator = prompt("enter +, -, * or /");
+// console.log("operator = " + operator);
+// console.log("The answer is " + operate(a, b, operator));
 
 
 // // Do not edit below this line
