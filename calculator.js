@@ -4,12 +4,12 @@ const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = function (a, b) {
     console.log("divide function a = " + a + ", b = " + b);
-    if (b === 0) {
-        console.log("b = " + b);
-        return "Don't divide by zero";
-    } else {
+
+    if (Number.isFinite(a / b)) {
         return a / b;
-    }
+    } else {
+        return "Don't divide by zero"
+    };
 };
 
 const operate = function (a, b, operator) {
