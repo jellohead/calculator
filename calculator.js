@@ -41,8 +41,10 @@ const pop = () => numberStack.pop();
 
 //this needs to be wrapped in some sort of init loop
 const buttons = document.querySelectorAll('button');
+console.log(buttons);
 buttons.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+        console.log(e);
         //take action for button clicked
     })
 })
