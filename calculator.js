@@ -3,8 +3,6 @@ const add = (a, b) => +a + +b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = function (a, b) {
-    console.log("divide function a = " + a + ", b = " + b);
-
     if (Number.isFinite(a / b)) {
         return a / b;
     } else {
@@ -32,6 +30,11 @@ console.log("b = " + b);
 let operator = prompt("enter +, -, * or /");
 console.log("operator = " + operator);
 console.log("The answer is " + operate(a, b, operator));
+
+// equal buttons calls operate function
+// set up event listeners for each button
+// save entered numbers and operator in variables
+// should i use two stacks to hold numbers and operators?
 
 
 // // Do not edit below this line
