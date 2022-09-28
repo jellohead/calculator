@@ -1,8 +1,13 @@
 // calculator.js
+let numberStack = [],
+    operatorStack = [];
+
 const add = (a, b) => +a + +b;
 const subtract = (a, b) => a - b;
 const multiply = (a, b) => a * b;
 const divide = function (a, b) {
+    console.log("divide function a = " + a + ", b = " + b);
+    //need handler for 0/0, result is NaN
     if (Number.isFinite(a / b)) {
         return a / b;
     } else {
@@ -13,7 +18,7 @@ const divide = function (a, b) {
 const executeOp = () => { };
 const clear = () => { };
 
-const operate = function (a, b, operator) {
+const operate = (a, b, operator) => {
     switch (operator) {
         case "+":
             return add(a, b);
@@ -30,6 +35,7 @@ const operate = function (a, b, operator) {
     }
 }
 
+<<<<<<< HEAD
 // let a = prompt("enter a number");
 // console.log("a = " + a);
 // let b = prompt("enter another number");
@@ -43,11 +49,16 @@ const operate = function (a, b, operator) {
 // save entered numbers and operator in variables
 // should i use two stacks to hold numbers and operators?
 
+=======
+const push = (item) => numberStack.push(item);
+const pop = () => numberStack.pop();
+>>>>>>> keypad
 
-// // Do not edit below this line
-// module.exports = {
-//     add,
-//     subtract,
-//     multiply,
-//     divide
-// };
+const buttons = document.querySelectorAll('button');
+console.log(buttons);
+buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        console.log(e.target.id);
+        //take action for button clicked
+    })
+})
