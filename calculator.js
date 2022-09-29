@@ -37,7 +37,7 @@ const operate = (a, b, operator) => {
     }
 }
 
-const keypadEntry = function (id) {
+const keypadEntry = function (id, text) {
     console.log("keypad: id sent by keypad is " + id);
     if (id === "clear" ||
         id === "plus" ||
@@ -47,7 +47,7 @@ const keypadEntry = function (id) {
         id === "equal") {
         console.log("keypad: entered an operator");
     } else {
-        display(id);
+        display(id, text);
     }
 }
 
@@ -55,18 +55,22 @@ const push = (item) => numberStack.push(item);
 const pop = () => numberStack.pop();
 
 const buttons = document.querySelectorAll('button');
+// console.log("buttons: node list = " + buttons);
 console.log(buttons);
 buttons.forEach((button) => {
     button.addEventListener('click', (e) => {
         console.log("buttons.forEach: e.target.id " + e.target.id);
-        keypadEntry(e.target.id);
+        console.log("button: record = " + e);
+        console.log("button: text = " + e.target.firstChild.data);
+        keypadEntry(e.target.id, e.target.firstChild.data);
         //take action for button clicked
     })
 })
 
 // display function
-let display = (id) => {
+let display = (id, text) => {
+    console.log("display: id = " + id + ", text = " + text);
     console.log("display: keypad entry id = " + id);
-    displayDiv.textContent = id;
-
+    // displayDiv.textContent = text;
+    displayDiv.textContent += text;
 };
