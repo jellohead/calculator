@@ -18,7 +18,12 @@ const divide = function (a, b) {
 };
 
 const executeOp = () => { };
-const clear = () => { };
+
+const clear = () => {
+    numberStack = [];
+    operatorStack = [];
+    displayDiv.textContent = "";
+};
 
 const operate = (a, b, operator) => {
     switch (operator) {
@@ -46,6 +51,7 @@ const keypadEntry = function (id, text) {
         id === "divide" ||
         id === "equal") {
         pushNumber(displayDiv.textContent);
+        displayDiv.textContent = "";
         pushOperator(text);
         console.log("keypad: entered an operator");
     } else {
@@ -63,7 +69,8 @@ const pushOperator = (item) => {
     console.log("pushOperator pushed item = " + item);
 }
 
-const pop = () => numberStack.pop();
+const popNumber = () => numberStack.pop();
+const popOperator = () => operatorStack.pop();
 
 const buttons = document.querySelectorAll('button');
 // console.log("buttons: node list = " + buttons);
