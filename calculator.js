@@ -45,13 +45,24 @@ const keypadEntry = function (id, text) {
         id === "times" ||
         id === "divide" ||
         id === "equal") {
+        pushNumber(displayDiv.textContent);
+        pushOperator(id);
         console.log("keypad: entered an operator");
     } else {
         display(id, text);
     }
 }
 
-const push = (item) => numberStack.push(item);
+const pushNumber = (item) => {
+    numberStack.push(item);
+    console.log("pushNumber pushed item = " + item);
+}
+
+const pushOperator = (item) => {
+    operatorStack.push(item);
+    console.log("pushOperator pushed item = " + item);
+}
+
 const pop = () => numberStack.pop();
 
 const buttons = document.querySelectorAll('button');
