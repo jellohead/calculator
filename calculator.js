@@ -17,7 +17,12 @@ const divide = function (a, b) {
     };
 };
 
-const executeOp = () => { };
+const executeOp = () => {
+    b = popNumber();
+    a = popNumber();
+    operator = popOperator();
+    return a, b, operator;
+};
 
 const clear = () => {
     numberStack = [];
@@ -28,7 +33,7 @@ const clear = () => {
 const operate = (a, b, operator) => {
     switch (operator) {
         case "+":
-            return add(a, b);
+            displayDiv.textContent = add(a, b);
         case "-":
             return subtract(a, b);
         case "*":
@@ -36,7 +41,8 @@ const operate = (a, b, operator) => {
         case "/":
             return divide(a, b);
         case "=":
-            return executeOp();
+            // executeOp();
+            operate(executeOp());
         case "clear":
             return clear();
     }
