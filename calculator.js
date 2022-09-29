@@ -38,7 +38,7 @@ const operate = (a, b, operator) => {
 }
 
 const keypadEntry = function (id, text) {
-    console.log("keypad: id sent by keypad is " + id);
+    console.log("keypad: id sent by keypad is " + id + ", text is " + text);
     if (id === "clear" ||
         id === "plus" ||
         id === "minus" ||
@@ -46,7 +46,7 @@ const keypadEntry = function (id, text) {
         id === "divide" ||
         id === "equal") {
         pushNumber(displayDiv.textContent);
-        pushOperator(id);
+        pushOperator(text);
         console.log("keypad: entered an operator");
     } else {
         display(id, text);
